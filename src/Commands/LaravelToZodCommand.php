@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Zakini\LaravelToZod\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelToZodCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-to-zod';
 
     public $description = 'My command';
 
