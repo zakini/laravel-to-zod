@@ -1,11 +1,8 @@
 name: lint
 
 on:
-  push:
-    paths:
-      - '**.php'
-      - 'phpstan.dist.neon'
-      - '.github/workflows/lint.yml'
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   phpstan:
