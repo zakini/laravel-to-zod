@@ -51,3 +51,16 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/pest --ci
+
+  test-results:
+    if: always()
+
+    name: Test Results
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [test]
+
+    steps:
+      - uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}
