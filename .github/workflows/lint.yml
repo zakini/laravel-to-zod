@@ -46,3 +46,16 @@ jobs:
 
       - name: Run Pint
         run: ./vendor/bin/pint --test
+
+  lint-results:
+    if: always()
+
+    name: Linting Results
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [phpstan, pint]
+
+    steps:
+      - uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}
