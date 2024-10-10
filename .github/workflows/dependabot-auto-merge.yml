@@ -1,4 +1,5 @@
-name: dependabot-auto-merge
+name: Auto-merge Dependabot PRs
+
 on: pull_request_target
 
 permissions:
